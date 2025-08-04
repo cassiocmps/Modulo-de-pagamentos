@@ -24,15 +24,6 @@ namespace ModuloPagamentos.Repositories
             EnsureFileExists();
         }
 
-        private void EnsureFileExists()
-        {
-            if (!File.Exists(_filePath))
-            {
-                Directory.CreateDirectory(Path.GetDirectoryName(_filePath));
-                File.WriteAllText(_filePath, Header + "\n");
-            }
-        }
-
         public void Add(Cartao cartao)
         {
             lock (_lock)
@@ -60,6 +51,15 @@ namespace ModuloPagamentos.Repositories
                         CPF = parts[4]
                     };
                 }
+            }
+        }
+
+        private void EnsureFileExists()
+        {
+            if (!File.Exists(_filePath))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(_filePath));
+                File.WriteAllText(_filePath, Header + "\n");
             }
         }
     }
