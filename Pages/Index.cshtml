@@ -1,0 +1,28 @@
+﻿@page
+@{
+    ViewData["Title"] = "Processamento de Pagamentos";
+}
+
+<div class="container py-5">
+    <div class="card shadow-sm mx-auto mb-4" style="max-width: 700px;">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Módulo de Processamento de Pagamentos</h3>
+        </div>
+        <div class="card-body">
+            <p>
+                O módulo Processamento de Pagamentos, sendo este apenas um módulo intermediário entre o módulo Gerenciamento de Pedidos e um Provedor de Pagamentos externo, e tem como objetivos principais:
+            </p>
+            <ul>
+                <li>Assegurar o processo de entrada de capital a partir da geração de um pedido, minimizando erros e fraudes;</li>
+                <li>Processar o pagamento de maneira rápida e segura, para que o comprador receba seu produto com a maior agilidade possível assim que realizar o pagamento.</li>
+                <li>Proporcionar segurança ao comprador ao garantir o direito a devolução do pedido ou cancelamento, além da segurança dos dados salvos.</li>
+                <li>Permitir o gerenciamento e saque do capital de entrada para o vendedor.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="alert alert-info mx-auto" style="max-width: 700px;">
+        <strong>Atenção:</strong> Esta interface web é apenas para demonstração e testes.<br />
+        O módulo de Processamento de Pagamentos foi projetado para ser integrado como parte de uma arquitetura monolítica (módulo interno) ou como um microserviço em sistemas distribuídos.<br />
+        Em ambientes reais, o fluxo de pagamento e as operações seriam acessados por outros módulos ou serviços, não diretamente por usuários finais através desta interface.
+    </div>
+</div>

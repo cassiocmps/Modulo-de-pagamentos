@@ -1,0 +1,45 @@
+@page
+@model ModuloPagamentos.Pages.Cartao.ListModel
+@{
+    ViewData["Title"] = "Cartões Cadastrados";
+}
+
+<div class="card shadow-sm mx-auto" style="max-width: 900px;">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0"><i class="bi bi-list"></i> Cartões Cadastrados</h4>
+    </div>
+    <div class="card-body">
+        @if (Model.Cartoes != null && Model.Cartoes.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Número</th>
+                            <th>Validade</th>
+                            <th>CVV</th>
+                            <th>Nome do Titular</th>
+                            <th>CPF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var cartao in Model.Cartoes)
+                    {
+                        <tr>
+                            <td>@cartao.Numero</td>
+                            <td>@cartao.Validade</td>
+                            <td>@cartao.CVV</td>
+                            <td>@cartao.NomeTitular</td>
+                            <td>@cartao.CPF</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info">Nenhum cartão cadastrado.</div>
+        }
+    </div>
+</div>

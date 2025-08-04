@@ -1,0 +1,36 @@
+# Ignore build output and user-specific files
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ASP.NET Core secrets
+secrets.json
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Visual Studio
+.vs/
+
+# Docker
+*.pid
+
+# Logs
+*.log
+
+# Other
+Data/cartoes.csv
+
+# wwwroot: keep source assets, ignore generated/minified/bundled files
+wwwroot/**/*.min.js
+wwwroot/**/*.min.css
+wwwroot/**/*.map
+wwwroot/dist/
+wwwroot/build/
