@@ -16,7 +16,8 @@ namespace ModuloPagamentos.Services
         {
             var errors = new List<ValidationError>();
 
-            if (string.IsNullOrWhiteSpace(cartao.Numero) || !Regex.IsMatch(cartao.Numero, "^\\d{13,19}$"))
+            var numeroCartao = Regex.Replace(cartao.Numero ?? "", "\\s", "");
+            if (string.IsNullOrWhiteSpace(numeroCartao) || !Regex.IsMatch(numeroCartao, "^\\d{13,19}$"))
                 errors.Add(new ValidationError("Numero", "Número do cartão inválido."));
 
             if (!ValidarValidade(cartao.Validade))
